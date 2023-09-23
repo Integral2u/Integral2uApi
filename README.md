@@ -33,4 +33,16 @@ var quote = new[] {
                     new QuoteLine("4", 10, 12, 75, 2.0/12.0)
                 };
 var q = http.ReduceQuoteByValue(new ReduceQuoteByValue(quote, -50));
+var c = 0.0;
+var s = 0.0;
+foreach (var l in q)
+{
+    Console.Out.WriteLine($"{l.Sku}\t{Math.Round(l.Cost, 4)}\t{Math.Round(l.Sell, 4)}\t{Math.Round(l.Qty, 4)}\t{Math.Round((l.Qty * l.Sell), 4)}");
+    c += l.Qty * l.Cost;
+    s += l.Qty * l.Sell;
+}
+var m = s - c;
+Console.Out.WriteLine($"{Math.Round(c, 4)}\t{Math.Round(s, 4)}\t{Math.Round(m, 4)}\t{Math.Round(m / s, 4)}");
+
+Console.In.ReadLine();
 ```               
