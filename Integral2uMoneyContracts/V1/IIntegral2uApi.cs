@@ -3,10 +3,8 @@ using static Integral2uMoneyContracts.V1.ApiRoutes;
 
 namespace Integral2uMoneyContracts.V1
 {
-    public abstract class Integral2uApi
+    public interface IIntegral2uApi: Integral2uCommon.IIntegral2uApi
     {
-        public abstract double Post<Value>(string path, Value value);
-        public abstract Result? Post<Value, Result>(string path, Value value);
         public double DiscountFromRetailNet(double retail, double net) => DiscountFromRetailNet(new DiscountFromRetailNet(retail, net));
         public double DiscountFromRetailNet(DiscountFromRetailNet p) => Post(Discount.GetFromRetailNet, p);
 
@@ -44,7 +42,6 @@ namespace Integral2uMoneyContracts.V1
         public const string GetFromNetMargin = $"{Base}/{nameof(Cost)}/FromNetMargin";
         public double CostFromNetMargin(double net, double margin) => CostFromNetMargin(new CostFromNetMargin(net, margin));
         public double CostFromNetMargin(CostFromNetMargin p) => Post(Cost.GetFromNetMargin, p);
-
 
         public double MarkupFromCostNet(double cost, double net) => MarkupFromCostNet(new MarkupFromCostNet(cost, net));
         public double MarkupFromCostNet(MarkupFromCostNet p) => Post(Markup.GetFromCostNet, p);

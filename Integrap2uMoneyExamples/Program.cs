@@ -3,14 +3,14 @@ using Integral2uMoneyContracts.V1.Requests;
 
 //You rapid API Key should not be made publicly visible
 //Search appsettings or environment variables
-var rest = new Integral2uRestApi("[Your RapidApi Key Here]");
+var rest = new Integral2uRestApi("[Your RapidApi Key Here]") as IIntegral2uApi;
 var restResult = rest.DiscountFromRetailNet(1.0, 0.5);
 Console.Out.WriteLine(restResult);
 Console.Out.WriteLine(rest.RetailFromNetDiscount(0.5, restResult));
 
 //You rapid API Key should not be made publicly visible
 //Search appsettings or environment variables
-var http = new Integral2uHttpApi("[Your RapidApi Key Here]");
+var http = new Integral2uHttpApi("[Your RapidApi Key Here]") as IIntegral2uApi;
 var httpResult = http.DiscountFromRetailNet(1.0, 0.5);
 Console.Out.WriteLine(httpResult);
 Console.Out.WriteLine(http.RetailFromNetDiscount(0.5, httpResult));

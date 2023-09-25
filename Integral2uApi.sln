@@ -7,6 +7,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Integral2uMoneyContracts", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Integrap2uMoneyExamples", "Integrap2uMoneyExamples\Integrap2uMoneyExamples.csproj", "{1975B471-873E-40FA-A6B2-0208E8A96B87}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Integral2uInventoryContracts", "Integral2uInventoryContracts\Integral2uInventoryContracts.csproj", "{C5E30CDB-D001-40AD-A791-933D42381CFE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Integral2uCommon", "Integral2uCommon\Integral2uCommon.csproj", "{211E5BDC-9FB5-4EDA-B92D-C9B41EBB9AA1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{1975B471-873E-40FA-A6B2-0208E8A96B87}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1975B471-873E-40FA-A6B2-0208E8A96B87}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1975B471-873E-40FA-A6B2-0208E8A96B87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5E30CDB-D001-40AD-A791-933D42381CFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5E30CDB-D001-40AD-A791-933D42381CFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5E30CDB-D001-40AD-A791-933D42381CFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5E30CDB-D001-40AD-A791-933D42381CFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{211E5BDC-9FB5-4EDA-B92D-C9B41EBB9AA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{211E5BDC-9FB5-4EDA-B92D-C9B41EBB9AA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{211E5BDC-9FB5-4EDA-B92D-C9B41EBB9AA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{211E5BDC-9FB5-4EDA-B92D-C9B41EBB9AA1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
