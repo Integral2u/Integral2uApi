@@ -20,7 +20,7 @@ using Integral2uMoneyContracts.V1;
 
 //You rapid API Key should not be made publicly visible
 //Search appsettings or environment variables
-var rest = new Integral2uRestApi("[Your rapid API Key Here]");
+var rest = new Integral2uRestApi("[Your rapid API Key Here]") as IIntegral2uApi; 
 var restResult = rest.DiscountFromRetailNet(1.0, 0.5);
 Console.Out.WriteLine(restResult);
 

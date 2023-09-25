@@ -52,7 +52,7 @@ namespace Integral2uMoneyContracts.V1
         public double MarkupFromMargin(double margin) => MarkupFromMargin(new MarginPercent(margin));
         public double MarkupFromMargin(MarginPercent p) => Post(Markup.GetFromMargin, p);
 
-        public QuoteLine[]? ReduceQuoteByValue(ReduceQuoteByValue p) => Post<ReduceQuoteByValue, QuoteLine[]>(Quote.ReduceQuoteByValue, p);
+        public QuoteLine[]? ReduceQuoteByValue(ReduceQuoteByValue p) => Post<ReduceQuoteByValue, QuoteLine[]>(Pricing.ReduceQuoteByValue, p);
 
     }
 

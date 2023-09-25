@@ -13,13 +13,13 @@
             public const string GetFromRetailNet = $"{Base}/{nameof(Discount)}/FromRetailNet";
         }
 
-        public static class Quote
+        public static class Pricing
         {
             /// <summary>
             /// Attempts to reduce a quote by a given value. Decreases all sell until a defined min margin percent or 0% by default
             /// the reduction value is always removed regardless  of sign. Precision is defined most granular decimal place in all sells.
             /// </summary>
-            public const string ReduceQuoteByValue = $"{Base}/{nameof(Quote)}/ReduceQuoteByValue";
+            public const string ReduceQuoteByValue = $"{Base}/{nameof(Pricing)}/ReduceQuoteByValue";
         }
         public static class Net
         {
