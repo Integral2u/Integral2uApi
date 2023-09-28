@@ -1,4 +1,4 @@
-﻿namespace Integral2uMoneyContracts.V1
+﻿namespace Integral2uInventoryContracts.V1
 {
     public class Integral2uHttpApi : Integral2uCommon.Integral2uHttpApi, IIntegral2uApi
     {
