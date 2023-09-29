@@ -64,13 +64,13 @@ namespace Integral2uInventoryContracts.V1
             /// </summary>
             public const string GetWeightedUsage = $"{Base}/{nameof(Forecasting)}/WeightedUsage";
             /// <summary>
-            /// Using <see cref="GetWeightedUsage"/> this method will look at months prior to last to determin
-            /// which range of months is best to use to forcast the next months based on distanced from used months compared to last month,
-            /// The usage usinging the most recent month is the computed.
+            /// Using <see cref="GetWeightedUsage"/> this method will look at months prior to last to determine
+            /// which range of months is best to use to forecast the next months based on distanced from used months compared to last month,
+            /// The usage using the most recent month is the computed.
             /// </summary>
             public const string GetBestCaseWeightedUsage = $"{Base}/{nameof(Forecasting)}/BestCaseWeightedUsage";
             /// <summary>
-            /// Like <see cref="GetBestCaseWeightedUsage"/> this method will do the same but ustilized various other forcatsing methods
+            /// Like <see cref="GetBestCaseWeightedUsage"/> this method will do the same but ustilized various other forcastsing methods
             /// to pick the best suited algorithm and parameters.
             /// </summary>
             public const string GetBestCaseUsage = $"{Base}/{nameof(Forecasting)}/BestCaseUsage";
