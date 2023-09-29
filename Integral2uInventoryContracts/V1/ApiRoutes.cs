@@ -26,12 +26,12 @@ namespace Integral2uInventoryContracts.V1
             /// </summary>
             public const string GetStockTurn = $"{Base}/{nameof(KPI)}/StockTurn";
             /// <summary>
-            /// Turnover is the ratio of good sold divideb by inventory commonly average inverntory.
+            /// Turnover is the ratio of good sold divide by inventory commonly average inverntory.
             /// The higher the better.
             /// </summary>
             public const string GetTurnover = $"{Base}/{nameof(KPI)}/Turnover";
             /// <summary>
-            /// Returns how manu Days of Inventory(DOI) based in inventory and Cost of Goods Sold(GOGS).
+            /// Returns how many Days of Inventory(DOI) based on inventory and Cost of Goods Sold(GOGS).
             /// </summary>
             public const string GetDaysOfInventory = $"{Base}/{nameof(KPI)}/DaysOfInventory";
         }
@@ -62,18 +62,18 @@ namespace Integral2uInventoryContracts.V1
             /// Example: Given 3 months sales {8,4,5}
             /// the result would be ((8*3)+(4*2)+(5*1))/(3+2+1) = 6.1666...7
             /// </summary>
-            public const string GetWeightedUsage = $"{Base}/{nameof(Conversions)}/WeightedUsage";
+            public const string GetWeightedUsage = $"{Base}/{nameof(Forecasting)}/WeightedUsage";
             /// <summary>
             /// Using <see cref="GetWeightedUsage"/> this method will look at months prior to last to determin
             /// which range of months is best to use to forcast the next months based on distanced from used months compared to last month,
             /// The usage usinging the most recent month is the computed.
             /// </summary>
-            public const string GetBestCaseWeightedUsage = $"{Base}/{nameof(Conversions)}/BestCaseWeightedUsage";
+            public const string GetBestCaseWeightedUsage = $"{Base}/{nameof(Forecasting)}/BestCaseWeightedUsage";
             /// <summary>
             /// Like <see cref="GetBestCaseWeightedUsage"/> this method will do the same but ustilized various other forcatsing methods
             /// to pick the best suited algorithm and parameters.
             /// </summary>
-            public const string GetBestCaseUsage = $"{Base}/{nameof(Conversions)}/BestCaseUsage";
+            public const string GetBestCaseUsage = $"{Base}/{nameof(Forecasting)}/BestCaseUsage";
         }
 
         //The four Methods below provide a means of calculating any one of each providing the other three.
