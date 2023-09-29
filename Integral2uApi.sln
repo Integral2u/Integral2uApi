@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Integral2uInventoryContract
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Integral2uCommon", "Integral2uCommon\Integral2uCommon.csproj", "{211E5BDC-9FB5-4EDA-B92D-C9B41EBB9AA1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Integral2uInventoryExamples", "Integral2uInventoryExamples\Integral2uInventoryExamples.csproj", "{2473FC0D-9F04-4932-9992-C805D3B8FE7E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{211E5BDC-9FB5-4EDA-B92D-C9B41EBB9AA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{211E5BDC-9FB5-4EDA-B92D-C9B41EBB9AA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{211E5BDC-9FB5-4EDA-B92D-C9B41EBB9AA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2473FC0D-9F04-4932-9992-C805D3B8FE7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2473FC0D-9F04-4932-9992-C805D3B8FE7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2473FC0D-9F04-4932-9992-C805D3B8FE7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2473FC0D-9F04-4932-9992-C805D3B8FE7E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
