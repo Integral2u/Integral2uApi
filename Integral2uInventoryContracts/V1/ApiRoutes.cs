@@ -70,7 +70,7 @@ namespace Integral2uInventoryContracts.V1
             /// </summary>
             public const string GetBestCaseWeightedUsage = $"{Base}/{nameof(Forecasting)}/BestCaseWeightedUsage";
             /// <summary>
-            /// Like <see cref="GetBestCaseWeightedUsage"/> this method will do the same but ustilized various other forcastsing methods
+            /// Like <see cref="GetBestCaseWeightedUsage"/> this method will do the same but utilize various other forecasting methods
             /// to pick the best suited algorithm and parameters.
             /// </summary>
             public const string GetBestCaseUsage = $"{Base}/{nameof(Forecasting)}/BestCaseUsage";
