@@ -12,10 +12,10 @@ Easy to use Enterprise resource planning (ERP) tools for planing prices, costs, 
 https://www.nuget.org/packages/Integral2uMoneyContracts/
 
 Inventory
-Inventory proveide the inventory management Enterprise Resource Managment(ERP) tools to aid in planning and achieving optimal inventory.  Great for determining and forcasting inventory requirements.
+Inventory provides inventory management Enterprise Resource Managment(ERP) tools to aid in planning and achieving optimal inventory.  Great for determining and forcasting inventory requirements.
 https://www.nuget.org/packages/Integral2uInventoryContracts/
 
-# Quick Example
+# Quick Example Money
 ```
 using Integral2uMoneyContracts.V1;
 
@@ -47,3 +47,16 @@ Console.Out.WriteLine($"{Math.Round(c, 4)}\t{Math.Round(s, 4)}\t{Math.Round(m, 4
 
 Console.In.ReadLine();
 ```               
+
+# Quick Example Inventory
+```
+using Integral2uInventoryContracts.V1;
+
+//You rapid API Key should not be made publicly visible
+//Search appsettings or environment variables
+var rest = new Integral2uRestApi("[Your RapidApi Key Here]") as IIntegral2uApi;
+var restResult = rest.WeightedUsage(new double[] { 8, 4, 5 });
+Console.Out.WriteLine(restResult); //~6.16666
+
+Console.In.ReadLine();
+```
