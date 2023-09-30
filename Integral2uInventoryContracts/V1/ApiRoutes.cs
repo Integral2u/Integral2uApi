@@ -21,7 +21,7 @@ namespace Integral2uInventoryContracts.V1
         public static class KPI
         {
             /// <summary>
-            /// StockTurn is how many times months it takes to sell though the value of inventory.
+            /// StockTurn is how many times a months it takes to sell though the value of inventory.
             /// Lower is better.
             /// </summary>
             public const string GetStockTurn = $"{Base}/{nameof(KPI)}/StockTurn";
