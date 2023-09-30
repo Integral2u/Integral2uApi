@@ -8,11 +8,12 @@ While we will provide custom API's we also create and distibute our own prebuilt
 
 # Current API's'
 Money
-Easy to use money calculators for planing prices, costs, markups.
-Quote repricing by value
-Planned Pro+
-Customer discount planner to achive margin based on sales
+Easy to use Enterprise resource planning (ERP) tools for planing prices, costs, markups and dealing with money.
+https://www.nuget.org/packages/Integral2uMoneyContracts/
 
+Inventory
+Inventory proveide the inventory management Enterprise Resource Managment(ERP) tools to aid in planning and achieving optimal inventory.  Great for determining and forcasting inventory requirements.
+dotnet add package Integral2uInventoryContracts --version 1.0.0
 
 # Quick Example
 ```
