@@ -13,7 +13,7 @@ https://www.nuget.org/packages/Integral2uMoneyContracts/
 
 Inventory
 Inventory proveide the inventory management Enterprise Resource Managment(ERP) tools to aid in planning and achieving optimal inventory.  Great for determining and forcasting inventory requirements.
-dotnet add package Integral2uInventoryContracts --version 1.0.0
+https://www.nuget.org/packages/Integral2uInventoryContracts/
 
 # Quick Example
 ```
