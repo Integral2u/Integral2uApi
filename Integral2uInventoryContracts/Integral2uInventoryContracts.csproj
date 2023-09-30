@@ -7,7 +7,7 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Title>Integral2u Inventory API</Title>
     <Company>Integral2u</Company>
-    <Description>Inventory provide the inventory management Enterprise Resource Managment(ERP) tools to aid in planning and achieving optimal inventory.</Description>
+    <Description>Inventory provides inventory management Enterprise Resource Managment(ERP) tools to aid in planning and achieving optimal inventory.</Description>
     <Copyright>Integral2u 2023</Copyright>
     <PackageProjectUrl>https://rapidapi.com/integral2u/api/integral2uinventory1</PackageProjectUrl>
     <PackageIcon>badge.png</PackageIcon>
