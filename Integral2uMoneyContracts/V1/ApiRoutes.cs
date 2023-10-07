@@ -1,5 +1,8 @@
 ﻿namespace Integral2uMoneyContracts.V1
 {
+    /// <summary>
+    /// API Endpoint structure
+    /// </summary>
     public static class ApiRoutes
     {
         public const string Root = "api";

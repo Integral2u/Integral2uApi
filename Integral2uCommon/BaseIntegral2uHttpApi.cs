@@ -5,10 +5,16 @@ using System.Text.Json;
 
 namespace Integral2uCommon
 {
-    public class Integral2uHttpApi : Integral2uApi
+    public class BaseIntegral2uHttpApi : BaseIntegral2uApi
     {
         public readonly HttpClient _client = new();
-        public Integral2uHttpApi(string rapidApiKey, string rapidApiHost, string rapidApiBasePath) : base(rapidApiKey, rapidApiHost, rapidApiBasePath) { }
+        /// <summary>
+        /// Provides helper methods though use of extenting and implementing default interface methods by extending IBaseIntegral2uApi
+        /// </summary>
+        /// <param name="rapidApiKey">Your RapidAPI Key</param>
+        /// <param name="rapidApiHost">Generally to be defined by extending API's</param>
+        /// <param name="rapidApiBasePath">Generally to be defined by extending API's</param>
+        public BaseIntegral2uHttpApi(string rapidApiKey, string rapidApiHost, string rapidApiBasePath) : base(rapidApiKey, rapidApiHost, rapidApiBasePath) { }
         public override double Post<Value>(string path, Value value)
         {
             var uri = new Uri(new Uri(RapidApiBasePath), path.ToLower());
@@ -36,7 +42,6 @@ namespace Integral2uCommon
             if (!double.TryParse(t.Result, out var d)) return double.NaN;
             return d;
         }
-
         public override Result? Post<Value, Result>(string path, Value value) where Result : default
         {
             var uri = new Uri(new Uri(RapidApiBasePath), path.ToLower());

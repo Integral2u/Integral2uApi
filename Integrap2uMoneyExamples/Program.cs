@@ -26,7 +26,7 @@ var quote = new[] {
                     new QuoteLine("3", 10, 11, 250),
                     new QuoteLine("4", 10, 12, 75, 2.0/12.0)
                 };
-var q = http.ReduceQuoteByValue(new ReduceQuoteByValue(quote, -50));
+var q = http.ReduceQuoteByValue(new ReduceQuoteByValue(quote, -50)) ?? Array.Empty<QuoteLine>();
 
 var c = 0.0;
 var s = 0.0;

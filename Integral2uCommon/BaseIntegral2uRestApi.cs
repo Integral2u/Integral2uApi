@@ -4,10 +4,10 @@ using System.Text.Json;
 
 namespace Integral2uCommon
 {
-    public class Integral2uRestApi : Integral2uApi
+    public class BaseIntegral2uRestApi : BaseIntegral2uApi
     {
         private readonly RestClient _client;
-        public Integral2uRestApi(string rapidApiKey, string rapidApiHost, string rapidApiBasePath) : base(rapidApiKey, rapidApiHost, rapidApiBasePath)
+        public BaseIntegral2uRestApi(string rapidApiKey, string rapidApiHost, string rapidApiBasePath) : base(rapidApiKey, rapidApiHost, rapidApiBasePath)
         {
             _client = new RestClient(rapidApiBasePath);
         }

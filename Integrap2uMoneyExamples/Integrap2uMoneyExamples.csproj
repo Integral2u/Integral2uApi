@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Integral2uCommon\Integral2uCommon.csproj" />
     <ProjectReference Include="..\Integral2uMoneyContracts\Integral2uMoneyContracts.csproj" />
   </ItemGroup>
 

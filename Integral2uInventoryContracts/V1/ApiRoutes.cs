@@ -1,12 +1,21 @@
-﻿using Integral2uInventoryContracts.V1.Requests;
-
-namespace Integral2uInventoryContracts.V1
+﻿namespace Integral2uInventoryContracts.V1
 {
+    /// <summary>
+    /// API Endpoint structure
+    /// </summary>
     public static class ApiRoutes
     {
         public const string Root = "api";
         public const string Version = "v1";
         public const string Base = $"{Root}/{Version}";
+
+        public static class Helper
+        {
+            /// <summary>
+            /// Gets the APIs user subscription
+            /// </summary>
+            public const string GetUserSubscription = $"{Base}/{nameof(KPI)}/UserSubscription";
+        }
         public static class Basic
         {
             /// <summary>
@@ -95,6 +104,29 @@ namespace Integral2uInventoryContracts.V1
             /// Given Inventory, Revenue and Margin % you can determine the StockTurn 
             /// </summary>
             public const string GetStockTurnFrom = $"{Base}/{nameof(Relational)}/StockTurn";
+        }
+        public static class Stock
+        {
+            /// <summary>
+            /// MinMax is used to determin the minimum stock and maximum stock to hold.
+            /// Orders would be processed when stock reaches the minimum and orders upto the maximum
+            /// </summary>
+            public const string MinMax = $"{Base}/{nameof(Stock)}/MinMax";
+
+            /// <summary>
+            /// MinMaxMulti allows for multiple products to have their <see cref="MinMax"/> calculated.
+            /// Refer to https://rapidapi.com/integral2u/api/integral2uinventory1 for qty and rate limits.
+            /// </summary>
+            public const string MinMaxMulti = $"{Base}/{nameof(Stock)}/MinMaxMulti";
+            /// <summary>
+            /// Advised quantity to order given potential stock availability SOH-SO+PO the minimum and maximum stock and pack size
+            /// </summary>
+            public const string StockOrderAdvice = $"{Base}/{nameof(Stock)}/StockOrderAdvice";
+            /// <summary>
+            /// MinMaxMulti allows for multiple products to have their <see cref="StockOrderAdvice"/> calculated.
+            /// Refer to https://rapidapi.com/integral2u/api/integral2uinventory1 for qty and rate limits.
+            /// </summary>
+            public const string StockOrderAdviceMulti = $"{Base}/{nameof(Stock)}/StockOrderAdviceMulti";
         }
     }
 }
