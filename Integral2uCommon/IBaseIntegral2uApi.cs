@@ -8,7 +8,14 @@
     public interface IBaseIntegral2uApi
     {
         /// <summary>
-        /// Post to the API path with a a type. Primative double return only.
+        /// Post to the API path with a expected type..
+        /// </summary>
+        /// <typeparam name="Result">The type of Result being requested</typeparam>
+        /// <param name="path">API Endpoint</param>
+        /// <returns>The Result</returns>
+        public Result? Post<Result>(string path);
+        /// <summary>
+        /// Post to the API path with a type. Primative double return only.
         /// </summary>
         /// <typeparam name="Value">The type of value(Request) being sent</typeparam>
         /// <param name="path">API Endpoint</param>
@@ -16,7 +23,7 @@
         /// <returns>The Result</returns>
         public double Post<Value>(string path, Value value);
         /// <summary>
-        /// Post to the API path with a a type.
+        /// Post to the API path with a type.
         /// </summary>
         /// <typeparam name="Value">The type of value(Request) being sent</typeparam>
         /// <typeparam name="Result">The expected return type</typeparam>

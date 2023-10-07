@@ -12,6 +12,24 @@ namespace Integral2uCommon
             _client = new RestClient(rapidApiBasePath);
         }
 
+        public override Result? Post<Result>(string path) where Result : default
+        {
+            var request = new RestRequest(path.ToLower(), Method.Post);
+            request.AddHeader("content-type", "application/json");
+            request.AddHeader("X-RapidAPI-Key", RapidApiKey);
+            request.AddHeader("X-RapidAPI-Host", RapidApiHost);
+            var response = _client.Execute(request);
+            if (response == null) return default;
+            try
+            {
+                if (response.Content == null) return default;
+                return JsonConvert.DeserializeObject<Result>(response.Content);
+            }
+            catch
+            {
+                return default;
+            }
+        }
         public override double Post<Value>(string path, Value value)
         {
             var request = new RestRequest(path.ToLower(), Method.Post);

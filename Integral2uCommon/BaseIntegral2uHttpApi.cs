@@ -15,6 +15,32 @@ namespace Integral2uCommon
         /// <param name="rapidApiHost">Generally to be defined by extending API's</param>
         /// <param name="rapidApiBasePath">Generally to be defined by extending API's</param>
         public BaseIntegral2uHttpApi(string rapidApiKey, string rapidApiHost, string rapidApiBasePath) : base(rapidApiKey, rapidApiHost, rapidApiBasePath) { }
+
+        public override Result? Post<Result>(string path) where Result : default
+        {
+            var uri = new Uri(new Uri(RapidApiBasePath), path.ToLower());
+            var httpRequestMessage = new HttpRequestMessage
+            {
+                Method = HttpMethod.Post,
+                RequestUri = uri,
+                Headers = {
+                        { "X-RapidAPI-Key", RapidApiKey },
+                        { "X-RapidAPI-Host", RapidApiHost },
+                    }
+            };
+            var response = _client?.SendAsync(httpRequestMessage).Result;
+            if (response == null) return default;
+            var t = response.Content.ReadAsStringAsync();
+            t.Wait();
+            try
+            {
+                return JsonConvert.DeserializeObject<Result>(t.Result);
+            }
+            catch
+            {
+                return default;
+            }
+        }
         public override double Post<Value>(string path, Value value)
         {
             var uri = new Uri(new Uri(RapidApiBasePath), path.ToLower());

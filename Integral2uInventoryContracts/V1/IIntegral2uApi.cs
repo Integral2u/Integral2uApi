@@ -1,4 +1,5 @@
-﻿using Integral2uInventoryContracts.V1.Data;
+﻿using Integral2uCommon;
+using Integral2uInventoryContracts.V1.Data;
 using Integral2uInventoryContracts.V1.Requests;
 using Integral2uInventoryContracts.V1.Response;
 using System.Drawing;
@@ -12,6 +13,9 @@ namespace Integral2uInventoryContracts.V1
     /// </summary>
     public interface IIntegral2uApi : Integral2uCommon.IBaseIntegral2uApi
     {
+        #region Helpers
+        public ApiUserSubscription UserSubscription() => Post<ApiUserSubscription>(Helpers.GetUserSubscription);
+        #endregion
         #region Basic
         /// <summary>
         /// Refer to <see cref="ApiRoutes"/>

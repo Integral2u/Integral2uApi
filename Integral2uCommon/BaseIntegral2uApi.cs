@@ -20,7 +20,7 @@
             RapidApiHost = rapidApiHost;
             RapidApiBasePath = rapidApiBasePath;
         }
-
+        public abstract Result? Post<Result>(string path);
         public abstract double Post<Value>(string path, Value value);
         public abstract Result? Post<Value, Result>(string path, Value value);
     }

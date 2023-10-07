@@ -9,12 +9,12 @@
         public const string Version = "v1";
         public const string Base = $"{Root}/{Version}";
 
-        public static class Helper
+        public static class Helpers
         {
             /// <summary>
             /// Gets the APIs user subscription
             /// </summary>
-            public const string GetUserSubscription = $"{Base}/{nameof(KPI)}/UserSubscription";
+            public const string GetUserSubscription = $"{Base}/{nameof(Helpers)}/UserSubscription";
         }
         public static class Basic
         {
