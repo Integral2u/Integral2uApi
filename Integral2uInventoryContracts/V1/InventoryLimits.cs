@@ -1,4 +1,4 @@
-﻿namespace Integral2uInventoryContracts.V1
+﻿    namespace Integral2uInventoryContracts.V1
 {
     public static class InventoryLimits
     {

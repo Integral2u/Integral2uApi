@@ -108,7 +108,7 @@
         public static class Stock
         {
             /// <summary>
-            /// MinMax is used to determin the minimum stock and maximum stock to hold.
+            /// MinMax is used to determine the minimum stock and maximum stock to hold.
             /// Orders would be processed when stock reaches the minimum and orders upto the maximum
             /// </summary>
             public const string MinMax = $"{Base}/{nameof(Stock)}/MinMax";
@@ -119,7 +119,7 @@
             /// </summary>
             public const string MinMaxMulti = $"{Base}/{nameof(Stock)}/MinMaxMulti";
             /// <summary>
-            /// Advised quantity to order given potential stock availability SOH-SO+PO the minimum and maximum stock and pack size
+            /// Advises quantity to order given potential stock availability SOH-SO+PO the minimum and maximum stock and pack size
             /// </summary>
             public const string StockOrderAdvice = $"{Base}/{nameof(Stock)}/StockOrderAdvice";
             /// <summary>
