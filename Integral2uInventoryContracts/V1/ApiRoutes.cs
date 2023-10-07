@@ -123,7 +123,7 @@
             /// </summary>
             public const string StockOrderAdvice = $"{Base}/{nameof(Stock)}/StockOrderAdvice";
             /// <summary>
-            /// MinMaxMulti allows for multiple products to have their <see cref="StockOrderAdvice"/> calculated.
+            /// StockOrderAdviceMulti allows for multiple products to have their <see cref="StockOrderAdvice"/> calculated.
             /// Refer to https://rapidapi.com/integral2u/api/integral2uinventory1 for qty and rate limits.
             /// </summary>
             public const string StockOrderAdviceMulti = $"{Base}/{nameof(Stock)}/StockOrderAdviceMulti";
