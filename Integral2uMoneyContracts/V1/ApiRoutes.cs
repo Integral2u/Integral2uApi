@@ -8,6 +8,36 @@
         public const string Root = "api";
         public const string Version = "v1";
         public const string Base = $"{Root}/{Version}";
+        public static class Investment
+        {
+            /// <summary>
+            /// Return on Investment (ROI) expressed as a percentage and is calculated by 
+            /// dividing an investment's net profit (or loss) by its initial cost.
+            /// </summary>
+            public const string GetROIFromRevenueCost = $"{Base}/{nameof(Investment)}/ROIFromRevenueCost";
+            /// <summary>
+            /// Return on Investment (ROI) expressed as a percentage and is calculated by 
+            /// dividing an investment's net profit (or loss) by its initial cost.
+            /// </summary>
+            public const string GetROIFromMarginCost = $"{Base}/{nameof(Investment)}/ROIFromMarginCost";
+            /// <summary>
+            /// Net present value (NPV) is the difference between the present value of cash inflows and the 
+            /// present value of cash outflows over a period of time
+            /// </summary>
+            public const string GetNPVFromCashFlows = $"{Base}/{nameof(Investment)}/NPVFromCashFlows";
+            /// <summary>
+            /// Net present value (NPV) is the difference between the present value of cash inflows and the 
+            /// present value of cash outflows over a period of time
+            /// </summary>
+            public const string GetNPVFromCashFlow = $"{Base}/{nameof(Investment)}/NPVFromCashFlow";
+            /// <summary>
+            /// The internal rate of return (IRR) is a metric used in financial analysis to
+            /// estimate the profitability of potential investments. 
+            /// IRR is a discount rate that makes the net present value (NPV) of all cash flows equal 
+            /// to zero in a discounted cash flow analysis.
+            /// </summary>
+            public const string GetIRRFromCashFlow = $"{Base}/{nameof(Investment)}/IRRFromCashFlow";
+        }
         public static class Discount
         {
             /// <summary>

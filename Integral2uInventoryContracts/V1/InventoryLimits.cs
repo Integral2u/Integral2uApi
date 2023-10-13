@@ -14,7 +14,18 @@
             public const int MinMaxMultiMega = 500;
         }
         /// <summary>
-        /// Limits defined for bulk record per subscription level.       
+        /// Limits defined for bulk record processing per subscription level.       
+        /// These are set in API overriding will not change limits.
+        /// </summary>
+        public static class Forecasting
+        {
+            public const int ForecastingMultiBasic = MinMax.MinMaxMultiBasic;
+            public const int ForecastingMultiPro = MinMax.MinMaxMultiPro;
+            public const int ForecastingMultiUltra = MinMax.MinMaxMultiUltra;
+            public const int ForecastingMultiMega = MinMax.MinMaxMultiMega;
+        }
+        /// <summary>
+        /// Limits defined for bulk record processing per subscription level.       
         /// These are set in API overriding will not change limits.
         /// </summary>
         public static class OrderAdvice

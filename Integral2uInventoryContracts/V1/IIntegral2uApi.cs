@@ -15,6 +15,19 @@ namespace Integral2uInventoryContracts.V1
     {
         #region Helpers
         public ApiUserSubscription UserSubscription() => Post<ApiUserSubscription>(Helpers.GetUserSubscription);
+        //Usefull when you need to turn Transaction QTY's to Month Totals.  helper for forcasting functions.
+        public double[] AggrigateMonthValueFromDateTimeTransaction((DateTime date, double val)[] transactions)
+        {
+            var agg = new Dictionary<DateOnly, double>();
+            foreach (var item in transactions)
+            {
+                var key = new DateOnly(item.date.Year, item.date.Month, 1);
+                if (!agg.ContainsKey(key)) agg.Add(key, 0);
+                agg[key] += item.val
+;
+            }
+            return agg.OrderByDescending(p => p.Key).Select(p=>p.Value).ToArray();
+        }
         #endregion
         #region Basic
         /// <summary>
@@ -103,11 +116,25 @@ namespace Integral2uInventoryContracts.V1
         /// <summary>
         /// Refer to <see cref="ApiRoutes"/>
         /// </summary>
+        public ProductUsage[]? WeightedUsageMulti(ProductForecastUsing[] p) => Post<ProductForecastUsing[], ProductUsage[]>(Forecasting.GetWeightedUsageMulti, p);
+
+        /// <summary>
+        /// Refer to <see cref="ApiRoutes"/>
+        /// </summary>
         public ForecastResult? BestCaseWeightedUsage(double[] sales) => BestCaseWeightedUsage(new ForecastUsing(sales));
         /// <summary>
         /// Refer to <see cref="ApiRoutes"/>
         /// </summary>
+        public ProductForecastResult[]? BestCaseWeightedUsageMulti(ProductForecastUsing[] p) => Post<ProductForecastUsing[], ProductForecastResult[]>(Forecasting.GetBestCaseWeightedUsageMulti, p);
+
+        /// <summary>
+        /// Refer to <see cref="ApiRoutes"/>
+        /// </summary>
         public ForecastResult? BestCaseWeightedUsage(ForecastUsing p) => Post<ForecastUsing, ForecastResult>(Forecasting.GetBestCaseWeightedUsage, p);
+        /// <summary>
+        /// Refer to <see cref="ApiRoutes"/>
+        /// </summary>
+        public ProductForecastResult[]? BestCaseUsageMulti(ProductForecastUsing[] p) => Post<ProductForecastUsing[], ProductForecastResult[]>(Forecasting.GetBestCaseUsageMulti, p);
         /// <summary>
         /// Refer to <see cref="ApiRoutes"/>
         /// </summary>
@@ -152,7 +179,7 @@ namespace Integral2uInventoryContracts.V1
         public double StockTurnFromInventoryRevenueMarginPercent(InventoryRevenueMarginPercent p) => Post(Relational.GetStockTurnFrom, p);
         #endregion
         #region Stock
-        public MinMaxResult? MinMax(UsageMinMaxDays usageMinMaxDays)=>Post<UsageMinMaxDays,MinMaxResult>(Stock.MinMax, usageMinMaxDays);
+        public MinMaxResult? MinMax(UsageMinMaxDays usageMinMaxDays) => Post<UsageMinMaxDays, MinMaxResult>(Stock.MinMax, usageMinMaxDays);
         public ProductMinMaxResult[]? MinMaxMulti(UsageMinMaxDaysMultiple usageMinMaxDaysMulit) => Post<UsageMinMaxDaysMultiple, ProductMinMaxResult[]>(Stock.MinMaxMulti, usageMinMaxDaysMulit);
 
         public double StockOrderAdvice(StockLevelData stockLevelData) => Post(Stock.StockOrderAdvice, stockLevelData);

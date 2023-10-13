@@ -9,6 +9,36 @@ namespace Integral2uMoneyContracts.V1
     /// </summary>
     public interface IIntegral2uApi: Integral2uCommon.IBaseIntegral2uApi
     {
+        #region
+        /// <summary>
+        /// Refer to <see cref="ApiRoutes"/>
+        /// </summary>
+        public double ROIFromRevenueCost(double revenue, double cost) => ROIFromRevenueCost(new RevenueCost(revenue, cost));
+        /// <summary>
+        /// Refer to <see cref="ApiRoutes"/>
+        /// </summary>
+        public double ROIFromRevenueCost(RevenueCost p) => Post(Investment.GetROIFromRevenueCost, p);
+        /// <summary>
+        /// Refer to <see cref="ApiRoutes"/>
+        /// </summary>
+        public double ROIFromMarginCost(double margin, double cost) => ROIFromMarginCost(new MarginCost(margin, cost));
+        /// <summary>
+        /// Refer to <see cref="ApiRoutes"/>
+        /// </summary>
+        public double ROIFromMarginCost(MarginCost p) => Post(Investment.GetROIFromMarginCost, p);
+        /// <summary>
+        /// Refer to <see cref="ApiRoutes"/>
+        /// </summary>
+        public double NPVFromCashFlow(NPVFromCashFlow p) => Post(Investment.GetNPVFromCashFlow, p);
+        /// <summary>
+        /// Refer to <see cref="ApiRoutes"/>
+        /// </summary>
+        public double NPVFromCashFlows(NPVFromCashFlows p) => Post(Investment.GetNPVFromCashFlows, p);
+        /// <summary>
+        /// Refer to <see cref="ApiRoutes"/>
+        /// </summary>
+        public double IRRFromCashFlows(double[] cashFlows) => Post(Investment.GetIRRFromCashFlow, cashFlows);
+        #endregion
         #region Discount
         /// <summary>
         /// Refer to <see cref="ApiRoutes"/>

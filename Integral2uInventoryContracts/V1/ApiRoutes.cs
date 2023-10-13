@@ -70,19 +70,41 @@
             /// month has the most importance.  
             /// Example: Given 3 months sales {8,4,5}
             /// the result would be ((8*3)+(4*2)+(5*1))/(3+2+1) = 6.1666...7
+            /// No More than 12 Months used
             /// </summary>
             public const string GetWeightedUsage = $"{Base}/{nameof(Forecasting)}/WeightedUsage";
             /// <summary>
             /// Using <see cref="GetWeightedUsage"/> this method will look at months prior to last to determine
             /// which range of months is best to use to forecast the next months based on distanced from used months compared to last month,
             /// The usage using the most recent month is the computed.
+            /// No More than 12 Months used
             /// </summary>
             public const string GetBestCaseWeightedUsage = $"{Base}/{nameof(Forecasting)}/BestCaseWeightedUsage";
             /// <summary>
             /// Like <see cref="GetBestCaseWeightedUsage"/> this method will do the same but utilize various other forecasting methods
             /// to pick the best suited algorithm and parameters.
+            /// No More than 12 Months used
             /// </summary>
             public const string GetBestCaseUsage = $"{Base}/{nameof(Forecasting)}/BestCaseUsage";
+
+            /// <summary>
+            /// BestCaseUsageMulti allows for multiple products to have their <see cref="GetBestCaseUsage"/> calculated.
+            /// Refer to https://rapidapi.com/integral2u/api/integral2uinventory1 for qty and rate limits.
+            /// No More than 12 Months used
+            /// </summary>
+            public const string GetBestCaseUsageMulti = $"{Base}/{nameof(Forecasting)}/BestCaseUsageMulti";
+            /// <summary>
+            /// BestCaseWeightedUsage allows for multiple products to have their <see cref="BestCaseWeightedUsage"/> calculated.
+            /// Refer to https://rapidapi.com/integral2u/api/integral2uinventory1 for qty and rate limits.
+            /// No More than 12 Months used
+            /// </summary>
+            public const string GetBestCaseWeightedUsageMulti = $"{Base}/{nameof(Forecasting)}/BestCaseWeightedUsageMulti";
+            /// <summary>
+            /// WeightedUsageMulti allows for multiple products to have their <see cref="WeightedUsageMulti"/> calculated.
+            /// Refer to https://rapidapi.com/integral2u/api/integral2uinventory1 for qty and rate limits.
+            /// No More than 12 Months used
+            /// </summary>
+            public const string GetWeightedUsageMulti = $"{Base}/{nameof(Forecasting)}/WeightedUsageMulti";
         }
 
         //The four Methods below provide a means of calculating any one of each providing the other three.
