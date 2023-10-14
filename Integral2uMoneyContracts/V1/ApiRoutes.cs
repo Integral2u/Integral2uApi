@@ -8,6 +8,13 @@
         public const string Root = "api";
         public const string Version = "v1";
         public const string Base = $"{Root}/{Version}";
+        public static class Helpers
+        {
+            /// <summary>
+            /// Gets the APIs user subscription
+            /// </summary>
+            public const string GetUserSubscription = $"{Base}/{nameof(Helpers)}/UserSubscription";
+        }
         public static class Investment
         {
             /// <summary>
@@ -45,7 +52,6 @@
             /// </summary>
             public const string GetFromRetailNet = $"{Base}/{nameof(Discount)}/FromRetailNet";
         }
-
         public static class Pricing
         {
             /// <summary>
@@ -53,6 +59,11 @@
             /// the reduction value is always removed regardless  of sign. Precision is defined most granular decimal place in all sells.
             /// </summary>
             public const string ReduceQuoteByValue = $"{Base}/{nameof(Pricing)}/ReduceQuoteByValue";
+            /// <summary>
+            /// Dermins best discount to applie for a range of products to acheive a target Margin based on sales volume, cost and retail.
+            /// May be cases where a product could not adhear to min or target margin and are noted in the return values pricing exeptions.
+            /// </summary>
+            public const string CustomerPricingForTargetMargin = $"{Base}/{nameof(Pricing)}/CustomerPricingForTargetMargin";
         }
         public static class Net
         {
@@ -69,7 +80,6 @@
             /// </summary>
             public const string GetFromRetailDiscount = $"{Base}/{nameof(Net)}/FromRetailDiscount";
         }
-
         public static class Retail
         {
             /// <summary>
@@ -77,7 +87,6 @@
             /// </summary>
             public const string GetFromNetDiscount = $"{Base}/{nameof(Retail)}/FromNetDiscount";
         }
-
         public static class Margin
         {
             /// <summary>
@@ -105,7 +114,6 @@
             /// </summary>
             public const string GetFromMarkup = $"{Base}/{nameof(Margin)}/FromMarkup";
         }
-
         public static class Cost
         {
             /// <summary>
@@ -117,7 +125,6 @@
             /// </summary>
             public const string GetFromNetMargin = $"{Base}/{nameof(Cost)}/FromNetMargin";
         }
-
         public static class Markup
         {
             /// <summary>

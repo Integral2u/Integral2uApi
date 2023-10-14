@@ -19,11 +19,11 @@ namespace Integral2uInventoryContracts.V1
         public double[] AggrigateMonthValueFromDateTimeTransaction((DateTime date, double val)[] transactions)
         {
             var agg = new Dictionary<DateOnly, double>();
-            foreach (var item in transactions)
+            foreach (var (date, val) in transactions)
             {
-                var key = new DateOnly(item.date.Year, item.date.Month, 1);
+                var key = new DateOnly(date.Year, date.Month, 1);
                 if (!agg.ContainsKey(key)) agg.Add(key, 0);
-                agg[key] += item.val
+                agg[key] += val
 ;
             }
             return agg.OrderByDescending(p => p.Key).Select(p=>p.Value).ToArray();

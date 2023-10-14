@@ -1,4 +1,5 @@
 ﻿using Integral2uMoneyContracts.V1.Requests;
+using Integral2uMoneyContracts.V1.Response;
 using static Integral2uMoneyContracts.V1.ApiRoutes;
 
 namespace Integral2uMoneyContracts.V1
@@ -192,6 +193,10 @@ namespace Integral2uMoneyContracts.V1
         /// Refer to <see cref="ApiRoutes"/>
         /// </summary>
         public QuoteLine[]? ReduceQuoteByValue(ReduceQuoteByValue p) => Post<ReduceQuoteByValue, QuoteLine[]>(Pricing.ReduceQuoteByValue, p);
+        /// <summary>
+        /// Refer to <see cref="ApiRoutes"/>
+        /// </summary>
+        public CustomerPricingForMarginResults? CustomerPricingForTargetMargin(CustomerPricingForMargin p) => Post<CustomerPricingForMargin, CustomerPricingForMarginResults>(Pricing.CustomerPricingForTargetMargin, p);
         #endregion
     }
 
