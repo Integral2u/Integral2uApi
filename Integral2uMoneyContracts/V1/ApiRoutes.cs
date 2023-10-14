@@ -1,4 +1,7 @@
-﻿namespace Integral2uMoneyContracts.V1
+﻿using Newtonsoft.Json.Linq;
+using static Integral2uMoneyContracts.V1.ApiRoutes;
+
+namespace Integral2uMoneyContracts.V1
 {
     /// <summary>
     /// API Endpoint structure
@@ -60,8 +63,8 @@
             /// </summary>
             public const string ReduceQuoteByValue = $"{Base}/{nameof(Pricing)}/ReduceQuoteByValue";
             /// <summary>
-            /// Dermins best discount to applie for a range of products to acheive a target Margin based on sales volume, cost and retail.
-            /// May be cases where a product could not adhear to min or target margin and are noted in the return values pricing exeptions.
+            /// Determines best discount to applied for a range of products to achieve a target Margin based on sales volume, cost and retail.
+            /// May be cases where a product could not adhere to min or target margin and are noted in the return values pricing exceptions.
             /// </summary>
             public const string CustomerPricingForTargetMargin = $"{Base}/{nameof(Pricing)}/CustomerPricingForTargetMargin";
         }
