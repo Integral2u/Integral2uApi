@@ -15,48 +15,28 @@ Inventory
 Inventory provides inventory management Enterprise Resource Managment(ERP) tools to aid in planning and achieving optimal inventory.  Great for determining and forcasting inventory requirements.
 https://www.nuget.org/packages/Integral2uInventoryContracts/
 
-# Quick Example Money
+Sales Tax
+Easy to use Sales Tax information and Calculators for multiple countries  Great for determining and forcasting inventory requirements.
+https://www.nuget.org/packages/Integral2uSalesTaxContracts/
+
+# Quick Example
 ```
-using Integral2uMoneyContracts.V1;
+using Integral2uSalesTaxContracts.V1;
+using Integral2uSalesTaxContracts.V1.Requests;
 
 //You rapid API Key should not be made publicly visible
 //Search appsettings or environment variables
-var rest = new Integral2uRestApi("[Your rapid API Key Here]") as IIntegral2uApi; 
-var restResult = rest.DiscountFromRetailNet(1.0, 0.5);
-Console.Out.WriteLine(restResult);
+//var client = new Integral2uHttpApi("[Your RapidApi Key Here]") as IIntegral2uApi;
+var client = new Integral2uRestApi("[Your RapidApi Key Here]") as IIntegral2uApi;
+var countryCodes = client.CountryCodes();
+foreach(var code in countryCodes??Array.Empty<string>()) 
+    Console.Out.WriteLine(code);
+var provences = client.StateProvenceFor(new CountryCodeRequest("CAN"));
+foreach (var provence in provences ?? Array.Empty<string>())
+    Console.Out.WriteLine(provence);
 
-Console.Out.WriteLine(rest.RetailFromNetDiscount(0.5, restResult));
-
-var quote = new[] {
-                    new QuoteLine("1", 50, 60.00005, 10),
-                    new QuoteLine("2", 10, 11, 250),
-                    new QuoteLine("3", 10, 11, 250),
-                    new QuoteLine("4", 10, 12, 75, 2.0/12.0)
-                };
-var q = http.ReduceQuoteByValue(new ReduceQuoteByValue(quote, -50));
-var c = 0.0;
-var s = 0.0;
-foreach (var l in q)
-{
-    Console.Out.WriteLine($"{l.Sku}\t{Math.Round(l.Cost, 4)}\t{Math.Round(l.Sell, 4)}\t{Math.Round(l.Qty, 4)}\t{Math.Round((l.Qty * l.Sell), 4)}");
-    c += l.Qty * l.Cost;
-    s += l.Qty * l.Sell;
-}
-var m = s - c;
-Console.Out.WriteLine($"{Math.Round(c, 4)}\t{Math.Round(s, 4)}\t{Math.Round(m, 4)}\t{Math.Round(m / s, 4)}");
-
-Console.In.ReadLine();
-```               
-
-# Quick Example Inventory
-```
-using Integral2uInventoryContracts.V1;
-
-//You rapid API Key should not be made publicly visible
-//Search appsettings or environment variables
-var rest = new Integral2uRestApi("[Your RapidApi Key Here]") as IIntegral2uApi;
-var restResult = rest.WeightedUsage(new double[] { 8, 4, 5 });
-Console.Out.WriteLine(restResult); //~6.16666
+var VAT = client.RecordFor(new SalesTaxRecordRequest("usa", "1001", string.Empty));
+Console.Out.WriteLine(VAT.StandardRate);
 
 Console.In.ReadLine();
 ```

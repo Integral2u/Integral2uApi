@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <Title>Integral2u Sales Tax API</Title>
+    <Version>1.0.0</Version>
+    <Company>Integral2u</Company>
+    <Description>Easy to use Sales Tax information and Calculators</Description>
+    <Copyright>Integral2u 2023</Copyright>
+    <PackageProjectUrl>https://rapidapi.com/integral2u/api/integral2usalestax</PackageProjectUrl>
+    <PackageIcon>badge.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/Integral2u/Integral2uApi</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>API;Money;Sales;TAX;GTS;VAT</PackageTags>
+    <PackageLicenseFile>License.txt</PackageLicenseFile>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\README.md" Link="README.md">
+      <PackagePath>\</PackagePath>
+      <Pack>True</Pack>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Integral2uCommon\Integral2uCommon.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="badge.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Update="License.txt">
+      <PackagePath>\</PackagePath>
+      <Pack>True</Pack>
+    </None>
+  </ItemGroup>
+
+</Project>
