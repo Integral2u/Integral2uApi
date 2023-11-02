@@ -32,7 +32,7 @@ namespace Integral2uSalesTaxContracts.V1
             public const string GetRecordFor = $"{Base}/{nameof(SalesTax)}/RecordFor";
 
             /// <summary>
-            /// Gets available states or provences given a Country Code.
+            /// Gets available states or provinces given a Country Code.
             /// </summary>
             public const string GetStateProvenceFor = $"{Base}/{nameof(SalesTax)}/StateProvenceFor";
             
